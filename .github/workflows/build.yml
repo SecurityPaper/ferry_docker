@@ -20,6 +20,7 @@ jobs:
       with:
         name: lanyulei/ferry_web
         ref: refs/heads/master
+    - run: cd ferry_web
 
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
