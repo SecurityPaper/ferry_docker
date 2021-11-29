@@ -1,4 +1,20 @@
-version '3'
-
+version: '3'
 services:
   web:
+    image: securitypaperorg/ferry_web:latest
+    ports:
+      - 80:80
+    volumes:
+      - ./config/Caddyfile:/etc/Caddyfile
+    environment:
+      -  fsdaf=value
+  # go-server:
+  #   image: xxx
+  # mysql:
+  #   image: mysql:5.7
+  #   volumes:
+  #     - ./db:/var/lib/mysql
+  # redis:
+  #   image: redis
+  #   environment: 
+  #     - fdsaf=value
