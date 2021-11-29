@@ -5,7 +5,7 @@ services:
     ports:
       - 80:80
     volumes:
-      - ./config/Caddyfile:/etc/Caddyfile
+      - ./config/Caddyfile:/etc/caddy/Caddyfile
     environment:
       -  fsdaf=value
   # go-server:

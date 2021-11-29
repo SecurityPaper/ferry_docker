@@ -1,7 +1,7 @@
 FROM node:12-alpine AS build_web
 RUN apk add go build-base git
 RUN git clone https://github.com/lanyulei/ferry_web.git
-RUN cd ferry_web && npm install && npm run build:prod
+RUN cd ferry_web && sed -i '/VUE_APP_BASE_API/d' .env.production && npm install && npm run build:prod
 
 FROM caddy
 COPY --from=build_web /ferry_web/web /web

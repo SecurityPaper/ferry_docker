@@ -1,3 +1,11 @@
-test.example.com:80{
-    root /web
+test.example.com:80 {
+	encode gzip
+	file_server
+	root * /web
+    log {
+        output file /var/log/access.log {
+            roll_size 1gb
+            roll_keep 5
+            roll_keep_for 720h
+        }
 }
