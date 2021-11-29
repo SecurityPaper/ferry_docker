@@ -2,6 +2,12 @@ test.example.com:80 {
 	encode gzip
 	file_server
 	root * /web
+    proxy /api/* http://server:8002
+    proxy /login/* http://server:8002
+    proxy /refresh_token/* http://server:8002
+    proxy /swagger/* http://server:8002
+    proxy /static/uploadfile/*  http://server:8002
+
     log {
         output file /var/log/access.log {
             roll_size 1gb

@@ -7,14 +7,45 @@ services:
     volumes:
       - ./config/Caddyfile:/etc/caddy/Caddyfile
     environment:
-      -  fsdaf=value
-  # go-server:
-  #   image: xxx
-  # mysql:
-  #   image: mysql:5.7
-  #   volumes:
-  #     - ./db:/var/lib/mysql
-  # redis:
-  #   image: redis
-  #   environment: 
-  #     - fdsaf=value
+      -  TZ=Asia/Shanghai
+    networks:
+      docker_all:
+        ipv4_address: 10.30.88.2
+
+  server:
+    image: ferry_server:latest
+    volumes:
+      - ./config:/config
+    environment:
+      - TZ=Asia/Shanghai
+    networks:
+      docker_all:
+        ipv4_address: 10.30.88.3
+
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - ./db:/var/lib/mysql
+      - ./db_init:/docker-entrypoint-initdb.d
+    environment:
+      - TZ=Asia/Shanghai
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_DATABASE=ferry
+    networks:
+      docker_all:
+        ipv4_address: 10.30.88.4
+
+  redis:
+    image: redis
+    environment: 
+      - TZ=Asia/Shanghai
+    networks:
+      docker_all:
+        ipv4_address: 10.30.88.5
+
+
+networks:
+  docker_all:
+    ipam:
+      config:
+        - subnet: 10.30.88.0/24

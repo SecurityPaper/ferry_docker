@@ -1,4 +1,4 @@
-name: build_image
+name: build_server
 
 on:
   push:
@@ -39,7 +39,7 @@ jobs:
           context: .
           platforms: linux/amd64
           push: true
-          file: build/web/dockerfile
+          file: build/golang/dockerfile
           tags: |
-            ghcr.io/securitypaper/ferry_web:latest
-            securitypaperorg/ferry_web:latest
+            ghcr.io/securitypaper/ferry_server:latest
+            securitypaperorg/ferry_server:latest
