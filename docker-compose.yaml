@@ -5,7 +5,7 @@ services:
     ports:
       - 80:80
     volumes:
-      - ./config/Caddyfile:/etc/caddy/Caddyfile
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
     environment:
       -  TZ=Asia/Shanghai
     networks:
@@ -13,9 +13,10 @@ services:
         ipv4_address: 10.30.88.2
 
   server:
-    image: ferry_server:latest
+    image: securitypaperorg/ferry_server:latest
     volumes:
-      - ./config:/config
+      - ./config/rbac_model.conf:/ferry/rbac_model.conf
+      - ./config/settings.yml:/ferry/settings.yml
     expose:
       - 8002
     environment:
