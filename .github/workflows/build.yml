@@ -26,6 +26,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - run: ls -lh
     - run: cd ferry_web && npm install
     - run: cd ferry_web && npm run build:prod
       env:
