@@ -17,7 +17,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
-    - name: checkout ferry_web
       with:
         name: lanyulei/ferry_web
         ref: refs/heads/master
