@@ -15,8 +15,8 @@ services:
   server:
     image: securitypaperorg/ferry_server:latest
     volumes:
-      - ./config/rbac_model.conf:/ferry/rbac_model.conf
-      - ./config/settings.yml:/ferry/settings.yml
+      - ./config:/ferry/config
+      - ./templates:/ferry/templates
     expose:
       - 8002
     environment:

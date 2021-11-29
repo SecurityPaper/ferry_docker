@@ -5,4 +5,4 @@ RUN cd ferry && CGO_ENABLED=1 go build -a -tags netgo -ldflags "-s -w" -o ferry 
 
 FROM python:3.8-alpine
 COPY --from=build /ferry/ferry /ferry/
-CMD [ "/ferry/ferry","server","-c=/config/settings.yml" ]
+CMD [ "/ferry/ferry","server","-c=config/settings.yml" ]
