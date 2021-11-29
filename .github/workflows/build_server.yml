@@ -39,7 +39,7 @@ jobs:
           context: .
           platforms: linux/amd64
           push: true
-          file: build/golang/dockerfile
+          file: build/server/dockerfile
           tags: |
             ghcr.io/securitypaper/ferry_server:latest
             securitypaperorg/ferry_server:latest

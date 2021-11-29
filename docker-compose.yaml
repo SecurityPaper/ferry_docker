@@ -16,6 +16,8 @@ services:
     image: ferry_server:latest
     volumes:
       - ./config:/config
+    expose:
+      - 8002
     environment:
       - TZ=Asia/Shanghai
     networks:

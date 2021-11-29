@@ -2,11 +2,11 @@ test.example.com:80 {
 	encode gzip
 	file_server
 	root * /web
-    proxy /api/* http://server:8002
-    proxy /login/* http://server:8002
-    proxy /refresh_token/* http://server:8002
-    proxy /swagger/* http://server:8002
-    proxy /static/uploadfile/*  http://server:8002
+    proxy /api/* http://10.30.88.3:8002
+    proxy /login/* http://10.30.88.3:8002
+    proxy /refresh_token/* http://10.30.88.3:8002
+    proxy /swagger/* http://10.30.88.3:8002
+    proxy /static/uploadfile/*  http://10.30.88.3:8002
 
     log {
         output file /var/log/access.log {
