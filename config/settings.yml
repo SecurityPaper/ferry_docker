@@ -12,7 +12,7 @@ settings:
     writertimeout: 2
   database:
     dbtype: mysql
-    host: ferry_mysql
+    host: 10.30.88.4
     name: ferry
     password: 123456
     port: 3306
@@ -55,7 +55,7 @@ settings:
   public:
     islocation: 0
   redis:
-    url: redis://ferry_redis:6379
+    url: redis://10.30.88.5:6379
   ssl:
     key: keystring
     pem: temp/pem.pem

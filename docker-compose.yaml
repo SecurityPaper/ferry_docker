@@ -21,6 +21,9 @@ services:
       - 8002
     environment:
       - TZ=Asia/Shanghai
+    depends_on:
+      - redis
+      - mysql
     networks:
       docker_all:
         ipv4_address: 10.30.88.3
