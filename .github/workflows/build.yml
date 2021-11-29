@@ -20,14 +20,13 @@ jobs:
       with:
         name: lanyulei/ferry_web
         ref: refs/heads/master
-    - run: cd ferry_web
 
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm install
-    - run: npm run build:prod
+    - run: cd ferry_web && npm install
+    - run: cd ferry_web && npm run build:prod
       env:
         CI: true
