@@ -16,7 +16,7 @@ services:
     image: securitypaperorg/ferry_server:latest
     volumes:
       - ./config:/ferry/config
-      - ./templates:/ferry/templates
+      - ./template:/ferry/template
     expose:
       - 8002
     environment:
