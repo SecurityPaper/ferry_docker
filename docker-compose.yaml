@@ -2,6 +2,7 @@ version: '3'
 services:
   web:
     image: securitypaperorg/ferry_web:latest
+    restart: always
     ports:
       - 80:80
     volumes:
@@ -14,9 +15,11 @@ services:
 
   server:
     image: securitypaperorg/ferry_server:latest
+    restart: always
     volumes:
       - ./config:/ferry/config
       - ./template:/ferry/template
+      - ./static:/ferry/static
     expose:
       - 8002
     environment:
@@ -30,6 +33,7 @@ services:
 
   mysql:
     image: mysql:5.7
+    restart: always
     volumes:
       - ./db:/var/lib/mysql
       - ./db_init:/docker-entrypoint-initdb.d
@@ -43,6 +47,7 @@ services:
 
   redis:
     image: redis
+    restart: always
     environment: 
       - TZ=Asia/Shanghai
     networks:
