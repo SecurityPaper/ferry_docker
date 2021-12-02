@@ -30,9 +30,13 @@
 > 以下所有命令必须在项目根目录，有docker-compose.yaml文件的同级目录执行！！！！
 
 `docker-compose up -d` 启动项目命令，并且自动增加开机自启动，首次不要使用！！！关闭后再次启动时候再用！
+
 `docker-compose logs` 查看所有镜像的日志
+
 `docker-compose down` 关闭所有服务,并且关闭开机自启动
+
 `docker-compose restart` 重启所有服务
+
 
 ## 目录结构说明
 
